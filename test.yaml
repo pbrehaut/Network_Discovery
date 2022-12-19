@@ -1,0 +1,61 @@
+devices:
+  ROUTER1:
+    type: router
+    os: ios
+    platform: ios
+    credentials:
+      default:
+        username: user
+        password: pass
+    connections:
+      cli:
+        protocol: ssh
+        ip: "router1.test.org"
+  IOS-SWITCH1:
+    type: switch
+    os: ios
+    platform: ios
+    credentials:
+      default:
+        username: user
+        password: pass
+    connections:
+      cli:
+        protocol: ssh
+        ip: "ios-switch1.test.org"
+  ASA01/Context-A:
+    connections:
+      cli:
+        ip: "asa01-context-a.test.org"
+        protocol: ssh
+    credentials:
+      default:
+        password: user
+        username: pass
+      enable:
+        password: enapass
+    os: asa
+  F501:
+    type: 'bigip'
+    os: 'bigip'
+    connections:
+      rest:
+        class: rest.connector.Rest
+        ip: "f501.test.org"
+        port: 443
+        protocol: https
+        credentials:
+          rest:
+            username: user
+            password: pass
+  N7K01:
+    connections:
+      cli:
+        ip: "n7k01.test.org"
+        protocol: ssh
+    credentials:
+      default:
+        password: user
+        username: pass
+    os: nxos
+    type: n7k
